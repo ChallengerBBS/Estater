@@ -6,25 +6,26 @@ Add new property
     <form (ngSubmit)='onSubmit()' #Form="ngForm">
       <div class="form-group col-12">
         <label for="name">Name</label>
-        <input type="text" class="form-control" #propName="ngModel"
-        ngModel name="Name" required minlength="5">
+        <input type="text" class="form-control" #propName="ngModel" ngModel name="Name" required minlength="5">
         <span *ngIf="!propName.valid && propName.touched" class="error-block">
             <span *ngIf="propName.errors.required">Please provide a property name.</span>
-            <span *ngIf="propName.errors.minlength">Name must be atleast 5 characters long.</span>
+            <span *ngIf="propName.errors.minlength">Property name must be atleast 5 characters long.</span>
         </span>
       </div>
       <div class="form-group col-12">
         <label for="type">Type</label>
-        <input type="text" class="form-control" #propType="ngModel" ngModel name="Type" required>
+        <input type="text" class="form-control" #propType="ngModel" ngModel name="Type" required minlength="5">
         <span *ngIf="!propType.valid && propType.touched" class="error-block">
-          Please provide a property type.
+          <span *ngIf="propType.errors.required">Please provide a property type.</span>
+            <span *ngIf="propType.errors.minlength">Property type must be atleast 5 characters long.</span>
       </span>
       </div>
       <div class="form-group col-12">
         <label for="price">Price</label>
-        <input type="text" class="form-control" #propPrice="ngModel" ngModel name="Price" required>
+        <input type="text" class="form-control" #propPrice="ngModel" ngModel name="Price" required minlength="5">
         <span *ngIf="!propPrice.valid && propPrice.touched" class="error-block">
-          Please provide a property price.
+          <span *ngIf="propPrice.errors.required">Please provide a property price.</span>
+            <span *ngIf="propPrice.errors.minlength">Property price must be atleast 5 characters long.</span>
       </span>
       </div>
       <div class="form-group col-12">

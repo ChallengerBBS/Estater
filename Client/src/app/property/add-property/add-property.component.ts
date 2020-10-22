@@ -17,7 +17,7 @@ export class AddPropertyComponent implements OnInit {
   onBack(){
     this.router.navigate(['/']);
   }
-  onSubmit(Form : NgForm)
+  onSubmit()
   {
     console.log(this.addPropertyForm);
   }
