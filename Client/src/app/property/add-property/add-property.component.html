@@ -1,11 +1,14 @@
+<div class="row mb-5">
+<div class="col-8 shadow-lg p-0 bg-white">
+
 <div class="card">
   <div class="card-header">
-    List your Property
+    <h3>List your Property</h3>
   </div>
   <div class="card-body">
     <form (ngSubmit)='onSubmit()' #Form="ngForm">
-      <div>
-        <tabset #formTabs>
+      <div class="tab-panel">
+        <tabset class="member-tabset" #formTabs>
           <tab heading="Basic Info">
             <div>
               <p>
@@ -22,30 +25,32 @@
             </div>
             <div>
               <p>BHK</p>
-              <div class="btn-group" btnRadioGroup>
-                <label
-                *ngFor="let bhk of [1,2,3,4]"
-                class="btn btn-outline-primary" btnRadio=1 role="button" name="SellRent">
+              <div class="btn-group" btnRadioGroup name="BHK"
+              [(ngModel)]="propertyView.BHK">
+                <label *ngFor="let bhk of [1,2,3,4]"
+                class="btn btn-outline-primary" [btnRadio]=bhk tabindex=0 role="button" name="BHK">
                     {{bhk}}
                 </label>
               </div>
             </div>
             <div>
               <p>Property Type</p>
-              <div class="btn-group" btnRadioGroup>
+              <div class="btn-group" btnRadioGroup name='propertyType'
+              [(ngModel)]="propertyView.PType">
                 <label
                 *ngFor="let propertyType of propertyTypes"
-                class="btn btn-outline-primary" btnRadio=1 role="button" name="SellRent">
+                class="btn btn-outline-primary" [btnRadio]=propertyType tabindex=0 role="button" name="PropertyType">
                     {{propertyType}}
                 </label>
               </div>
             </div>
             <div>
               <p>Furnish Type</p>
-              <div class="btn-group" btnRadioGroup>
+              <div class="btn-group" btnRadioGroup name="furnishType"
+              [(ngModel)]="propertyView.FType">
                 <label
                 *ngFor="let furnishType of furnishTypes"
-                class="btn btn-outline-primary" btnRadio=1 role="button" name="SellRent">
+                class="btn btn-outline-primary" [btnRadio]=furnishType tabindex=0 role="button" name="furnishType">
                     {{furnishType}}
                 </label>
               </div>
@@ -57,7 +62,8 @@
                 #propName="ngModel"
                 ngModel name="Name"
                 required
-                minlength="5">
+                minlength="5"
+                [(ngModel)]="propertyView.Name">
                 <span *ngIf="!propName.valid && propName.touched" class="error-block">
                   <span *ngIf="propName.errors.required">Please provide name</span>
                   <span *ngIf="propName.errors.minlength">Name must be atleast 5 char long</span>
@@ -65,7 +71,10 @@
               </div>
               <div class="form-group col-12">
                 <label>City</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control"
+                #propName="ngModel"
+                name="propertyCity"
+                [(ngModel)]="propertyView.City">
               </div>
 
               <div class="form-group col-12">
@@ -77,7 +86,8 @@
           <tab heading="Pricing and Area">
               <div class="form-group col-12">
                 <label>Price (in USD)</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="price"
+                [(ngModel)]="propertyView.Price">
               </div>
 
               <div class="form-group col-12">
@@ -155,7 +165,7 @@
               <input type="text"
            placeholder="Datepicker"
            class="form-control"
-           bsDatepicker [bsConfig]="{containterClass: 'theme-dark-blue'}">
+           bsDatepicker [bsConfig]="{containterClass: 'theme-dark-blue', dateInputFormat: 'DD-MM-YYYY'}">
             </div>
 
             <div class="form-group col-12">
@@ -205,4 +215,15 @@
       </div>
     </form>
   </div>
+</div>
+</div>
+<div class="col-4">
+  <div class="card-header">
+    <h3>Your property preview</h3>
+  </div>
+    <div class="shadow-lg p-3 bg-white">
+      <app-property-card [property]="propertyView" hideIcons="true"></app-property-card>
+    </div>
+
+</div>
 </div>
