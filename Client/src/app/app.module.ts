@@ -22,11 +22,12 @@ import { HousingService } from './services/housing.service';
 import { UserService } from './services/user.service';
 import { AlertifyService } from './services/alertify.service';
 import { AuthService } from './services/auth.service';
+import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
 
 const appRoutes: Routes= [
   { path: '', component: PropertyListComponent},
   { path: 'rent-property', component: PropertyListComponent},
-  { path: 'property-detail/:id', component: PropertyDetailComponent},
+  { path: 'property-detail/:id', component: PropertyDetailComponent, resolve:{property: PropertyDetailResolverService}},
   { path: 'add-property', component: AddPropertyComponent},
   { path: 'user/login', component: UserLoginComponent},
   { path: 'user/register', component: UserRegisterComponent},
@@ -59,7 +60,8 @@ const appRoutes: Routes= [
   providers: [HousingService,
               UserService,
               AlertifyService,
-              AuthService],
+              AuthService,
+              PropertyDetailResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
