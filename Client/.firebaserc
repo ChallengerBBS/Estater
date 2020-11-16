@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "estater-bs"
+  },
+  "targets": {
+    "estater-bs": {
+      "hosting": {
+        "Estater": [
+          "estater-bs"
+        ]
+      }
+    }
+  }
+}
