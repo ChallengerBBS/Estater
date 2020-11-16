@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,11 +10,19 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class CityController : Controller
     {
+        private readonly DataContext dbContext;
+
+        public CityController(DataContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
+
         // GET: api/<controller>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult GetAllCities()
         {
-            return new string[] { "New York", "Los Angeles" };
+            var cities= this.dbContext.Cities.ToList();
+            return this.Ok(cities);
         }
 
         // GET api/<controller>/5
