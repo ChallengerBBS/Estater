@@ -4,46 +4,42 @@
 
     using Microsoft.AspNetCore.Mvc;
 
-    using Data;
-    using Microsoft.EntityFrameworkCore;
-    using WebAPI.Models;
+    using Data.Repositories;
+    using Models;
 
     [Route("api/[controller]")]
     public class CityController : Controller
     {
-        private readonly DataContext dbContext;
+        private readonly ICityRepository cityRepository;
 
-        public CityController(DataContext dbContext)
+        public CityController(ICityRepository cityRepository)
         {
-            this.dbContext = dbContext;
+            this.cityRepository = cityRepository;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllCities()
         {
-            var cities = await this.dbContext.Cities.ToListAsync();
+            var cities = await this.cityRepository.GetCitiesAsync();
             return this.Ok(cities);
         }
 
         [HttpPost("add")]
         [HttpPost("add/{cityName}")]
 
-        public async Task<IActionResult> AddCity(string cityName)
+        public async Task<IActionResult> AddCity(City city)
         {
-            City city = new City();
-            city.Name = cityName;
-           await this.dbContext.AddAsync(city);
-           await this.dbContext.SaveChangesAsync();
-            return this.Ok(city);
+            this.cityRepository.AddCity(city);
+            await this.cityRepository.SaveAsync();
+            return this.StatusCode(201);
         }
 
         [HttpDelete("delete/{cityId}")]
 
         public async Task<IActionResult> DeleteCity(int cityId)
         {
-            var city = await this.dbContext.Cities.FindAsync(cityId);
-            this.dbContext.Remove(city);
-            await this.dbContext.SaveChangesAsync();
+            this.cityRepository.DeleteCity(cityId);
+            await this.cityRepository.SaveAsync();
             return this.Ok(cityId);
         }
     }
