@@ -1,4 +1,4 @@
-﻿namespace WebAPI.Data.Repositories
+﻿namespace WebAPI.Interfaces
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -11,7 +11,5 @@
         void AddCity(City city);
 
         void DeleteCity(int cityId);
-
-        Task<bool> SaveAsync();
     }
 }

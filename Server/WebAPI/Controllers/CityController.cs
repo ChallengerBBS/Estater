@@ -6,21 +6,22 @@
 
     using Data.Repositories;
     using Models;
+    using WebAPI.Interfaces;
 
     [Route("api/[controller]")]
     public class CityController : Controller
     {
-        private readonly ICityRepository cityRepository;
+        private readonly IUnitOfWork unitOfWork;
 
-        public CityController(ICityRepository cityRepository)
+        public CityController(IUnitOfWork unitOfWork)
         {
-            this.cityRepository = cityRepository;
+            this.unitOfWork = unitOfWork;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllCities()
         {
-            var cities = await this.cityRepository.GetCitiesAsync();
+            var cities = await this.unitOfWork.cityRepository.GetCitiesAsync();
             return this.Ok(cities);
         }
 
@@ -29,8 +30,8 @@
 
         public async Task<IActionResult> AddCity(City city)
         {
-            this.cityRepository.AddCity(city);
-            await this.cityRepository.SaveAsync();
+            this.unitOfWork.cityRepository.AddCity(city);
+            await this.unitOfWork.SaveAsync();
             return this.StatusCode(201);
         }
 
@@ -38,8 +39,8 @@
 
         public async Task<IActionResult> DeleteCity(int cityId)
         {
-            this.cityRepository.DeleteCity(cityId);
-            await this.cityRepository.SaveAsync();
+            this.unitOfWork.cityRepository.DeleteCity(cityId);
+            await this.unitOfWork.SaveAsync();
             return this.Ok(cityId);
         }
     }

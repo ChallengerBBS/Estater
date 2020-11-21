@@ -8,7 +8,8 @@ namespace WebAPI
     using Microsoft.Extensions.Hosting;
 
     using Data;
-    using Data.Repositories;
+    using Interfaces;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -25,7 +26,7 @@ namespace WebAPI
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddControllers();
             services.AddCors();
-            services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
