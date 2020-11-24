@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Aguafina Script");
 h1 {
     margin-top: 10px;
     margin-bottom: 30px;
     text-align: center;
-    font-style: italic;
+    font-family: 'Aguafina Script';
+    font-size:120px;
 }
 
 #property-list {
