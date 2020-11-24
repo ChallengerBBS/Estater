@@ -50,5 +50,5 @@ export class PropertyListComponent implements OnInit {
       this.SortDirection = 'desc';
     }
   }
-
+   
 }

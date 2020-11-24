@@ -23,4 +23,9 @@ export class NavBarComponent implements OnInit {
     localStorage.removeItem('token');
     this.alertify.success("You are logged out !")
   }
+
+  image:string = "C:\Users\rumrg\Project\Estater\Client\src\app\images\Fotolia_30107564_Subscription_Monthly_M.jpg"
+  
 }
+
+
