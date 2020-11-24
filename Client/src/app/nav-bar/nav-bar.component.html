@@ -18,6 +18,10 @@
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active"  routerLink="/add-property">List Property (Free)</a>
       </li>
+
+      <li id="cleanCss">
+        <a href="http://localhost:2000/">Part</a>
+      </li>
     </ul>
 
     <div>
@@ -28,6 +32,7 @@
           routerLinkActive="active"
           >Register</a>
         </li>
+        
         <li *ngIf="!loggedin()" class="nav-item">
           <a class="nav-link"
           routerLink="user/login"
