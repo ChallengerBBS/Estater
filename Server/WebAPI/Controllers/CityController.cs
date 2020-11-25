@@ -10,6 +10,7 @@
     using Interfaces;
     using Dtos;
     using Models;
+    using Microsoft.AspNetCore.JsonPatch;
 
     [Route("api/[controller]")]
     [ApiController]
@@ -45,6 +46,18 @@
             await unitOfWork.SaveAsync();
             return StatusCode(201);
         }
+
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> UpdateCity(int id, CityDto cityDto)
+        {
+            var city = await this.unitOfWork.CityRepository.FindCity(id);
+            city.LastUpdatedBy = 1;
+            city.LastUpdatedOn = DateTime.Now;
+            mapper.Map(cityDto, city);
+            await this.unitOfWork.SaveAsync();
+            return this.StatusCode(200);
+        }
+
 
         [HttpDelete("delete/{cityId}")]
 
