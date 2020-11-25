@@ -59,5 +59,7 @@ E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\n
 E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\Humanizer.dll
 E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\#CodingStuff\Estater\Server\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
 E:\#CodingStuff\Estater\Server\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache

@@ -7,8 +7,11 @@ namespace WebAPI
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
 
+    using AutoMapper;
+
     using Data;
     using Interfaces;
+    using WebAPI.Helpers;
 
     public class Startup
     {
@@ -26,6 +29,7 @@ namespace WebAPI
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddControllers();
             services.AddCors();
+            services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 

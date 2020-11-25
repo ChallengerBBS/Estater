@@ -1,36 +1,34 @@
 ﻿namespace WebAPI.Controllers
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
+    using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
 
     using Interfaces;
     using Dtos;
-    using WebAPI.Models;
+    using Models;
 
     [Route("api/[controller]")]
     public class CityController : Controller
     {
         private readonly IUnitOfWork unitOfWork;
+        private readonly IMapper mapper;
 
-        public CityController(IUnitOfWork unitOfWork)
+        public CityController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllCities()
         {
             var cities = await this.unitOfWork.cityRepository.GetCitiesAsync();
-
-            var citiesDto = from c in cities
-                            select new CityDto()
-                            {
-                                Id = c.Id,
-                                Name = c.Name
-                            };
+            var citiesDto = this.mapper.Map<IEnumerable<City>>(cities);
 
             return this.Ok(citiesDto);
         }
