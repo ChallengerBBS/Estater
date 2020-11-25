@@ -1,5 +1,6 @@
 namespace WebAPI
 {
+    using AutoMapper;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
@@ -7,11 +8,9 @@ namespace WebAPI
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
 
-    using AutoMapper;
-
     using Data;
+    using Helpers;
     using Interfaces;
-    using WebAPI.Helpers;
 
     public class Startup
     {
@@ -25,12 +24,13 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(options=> 
+            services.AddDbContext<DataContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddCors();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +43,7 @@ namespace WebAPI
 
             app.UseRouting();
 
-            app.UseCors(a=> a.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            app.UseCors(m => m.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
             app.UseAuthorization();
 

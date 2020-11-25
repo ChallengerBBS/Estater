@@ -9,7 +9,7 @@
     {
         private readonly DataContext dataContext;
 
-        public ICityRepository cityRepository => 
+        public ICityRepository CityRepository => 
             new CityRepository(dataContext);
 
         public UnitOfWork(DataContext dataContext)
