@@ -25,6 +25,7 @@ import { AlertifyService } from './services/alertify.service';
 import { AuthService } from './services/auth.service';
 import { FilterPipe } from './Pipes/filter.pipe';
 import { SortPipe } from './Pipes/sort.pipe';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
       UserRegisterComponent,
       UserLoginComponent,
       FilterPipe,
-      SortPipe
+      SortPipe,
+      FooterComponent
    ],
    imports: [
       BrowserModule,
