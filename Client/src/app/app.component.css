@@ -1,0 +1,7 @@
+.background {
+    background-image: url("/assets/images/neighbourhood.jpg");
+}
+
+.content{
+    background: rgba(255, 255, 255, 0.5)
+}
