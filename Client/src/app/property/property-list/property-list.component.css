@@ -7,6 +7,7 @@ h1 {
     margin-right: 0px;
     text-align: center;
     font-family: 'Tangerine', serif;
+    
     font-size:150px;
     height: 100%;
     width: 100%;
@@ -19,7 +20,7 @@ h1 {
     font-size: 45px;
     
     text-shadow: 4px 4px 4px #aaa;
-    
+    font-weight: bold;
 
     background-image: url("/assets/images/home.jpg");
     background-size: cover;
