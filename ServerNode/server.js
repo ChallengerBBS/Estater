@@ -1,20 +1,26 @@
 let http = require("http");
 let url = require("url");
-let port = 2000
+let port = 2000;
+let fs = require("fs")
+let path = require("path");
 
 
 
-let server = http.createServer(function(req,res) {
-   res.end("Hello World")
+
+ http.createServer(function(req,res) {
+   
+   fs.readFile("index.html",(err,data) => {
+       if(err) throw new Error(err);
+       res.end(data)
+   })
 }).listen(port,function() {
     console.log("The second server run!!!!")
 })
 
 
 
-console.log(
-    process.hrtime()
-)
+
+
 
 
 

@@ -26,6 +26,7 @@ import { AuthService } from './services/auth.service';
 import { FilterPipe } from './Pipes/filter.pipe';
 import { SortPipe } from './Pipes/sort.pipe';
 import { FooterComponent } from './footer/footer.component';
+import { FormComponent } from './form/form.component';
 
 const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
       UserLoginComponent,
       FilterPipe,
       SortPipe,
-      FooterComponent
+      FooterComponent,
+      FormComponent
    ],
    imports: [
       BrowserModule,
