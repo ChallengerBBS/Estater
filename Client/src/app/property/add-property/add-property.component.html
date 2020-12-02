@@ -15,7 +15,7 @@
                   <div class="btn-group"
                   btnRadioGroup
                   formControlName="SellRent">
-                    <label class="btn btn-outline-primary mr-2"
+                    <label class="btn btn-outline-primary "
                     btnRadio=1 tabindex="0" role="button" name="SellRent">Sell</label>
                     <label class="btn btn-outline-primary"
                     btnRadio=2  tabindex="0" role="button" name="SellRent">Rent</label>
@@ -32,7 +32,7 @@
                   [(ngModel)]="propertyView.BHK" name="BHK">
                     <label
                       *ngFor="let bhk of [1,2,3,4]"
-                      class="btn btn-outline-primary mr-2"
+                      class="btn btn-outline-primary"
                       [btnRadio]="bhk" tabindex="0" role="button"
                       name="BHK">
                       {{bhk}}
@@ -50,7 +50,7 @@
                   [(ngModel)]="propertyView.PType">
                     <label
                     *ngFor="let ptype of propertyTypes"
-                    class="btn btn-outline-primary mr-2"
+                    class="btn btn-outline-primary "
                     [btnRadio]="ptype" tabindex="0" role="button"
                     name="PropType">{{ptype}}
                   </label>
@@ -67,7 +67,7 @@
                   [(ngModel)]="propertyView.FType">
                   <label
                     *ngFor="let ftype of furnishTypes"
-                    class="btn btn-outline-primary mr-2"
+                    class="btn btn-outline-primary "
                     [btnRadio]="ftype" tabindex="0" role="button"
                     name="FurnishType">
                     {{ftype}}
@@ -221,7 +221,7 @@
                   <p>Ready to Move</p>
                   <div class="btn-group" btnRadioGroup
                   formControlName="RTM">
-                    <label class="btn btn-outline-primary mr-2"
+                    <label class="btn btn-outline-primary"
                       btnRadio=1 tabindex="0" role="button"
                       name="RTM">Yes
                     </label>
@@ -261,7 +261,7 @@
                   <div class="btn-group"
                   btnRadioGroup
                   formControlName="Gated">
-                    <label class="btn btn-outline-primary mr-2"
+                    <label class="btn btn-outline-primary"
                     btnRadio=1 tabindex="0" role="button" name="Gated">Yes</label>
                     <label class="btn btn-outline-primary"
                     btnRadio=2  tabindex="0" role="button" name="Gated">No</label>
@@ -272,7 +272,7 @@
                   <p>Main Entrance</p>
                   <div class="btn-group" btnRadioGroup
                   formControlName="MainEntrance">
-                    <label class="btn btn-outline-primary mr-2"
+                    <label class="btn btn-outline-primary"
                     btnRadio=1 tabindex="0" role="button" name="Entrance">East</label>
                     <label class="btn btn-outline-primary"
                     btnRadio=2  tabindex="0" role="button" name="Entrance">West</label>
