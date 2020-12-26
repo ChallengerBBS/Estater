@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\Estater\\Server\\WebAPI\\WebAPI.csproj": {}
+    "E:\\#CodingStuff\\Estater\\Server\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Estater\\Server\\WebAPI\\WebAPI.csproj": {
+    "E:\\#CodingStuff\\Estater\\Server\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Estater\\Server\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "E:\\#CodingStuff\\Estater\\Server\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Projects\\Estater\\Server\\WebAPI\\WebAPI.csproj",
+        "projectPath": "E:\\#CodingStuff\\Estater\\Server\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\chall\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Estater\\Server\\WebAPI\\obj\\",
+        "outputPath": "E:\\#CodingStuff\\Estater\\Server\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chall\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
