@@ -49,7 +49,17 @@
         [HttpPut("update/{id}")]
         public async Task<IActionResult> UpdateCity(int id, CityDto cityDto)
         {
+            if (id != cityDto.Id)
+            {
+                return this.BadRequest("Update failed.");
+
+            }
+
             var city = await this.unitOfWork.CityRepository.FindCity(id);
+            if (city == null)
+            {
+                return this.BadRequest("Update failed.");
+            }
             city.LastUpdatedBy = 1;
             city.LastUpdatedOn = DateTime.Now;
             mapper.Map(cityDto, city);
