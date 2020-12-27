@@ -11,6 +11,11 @@ namespace WebAPI
     using Data;
     using Helpers;
     using Interfaces;
+    using System.Net;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Diagnostics;
+    using WebAPI.Extensions;
+    using WebAPI.Middlewares;
 
     public class Startup
     {
@@ -36,10 +41,9 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            //app.ConfigureExceptionHandler(env);
+
+            app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseRouting();
 
