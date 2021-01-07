@@ -4,6 +4,7 @@
 
     using Interfaces;
     using WebAPI.Data.Repositories;
+    using WebAPI.Models;
 
     public class UnitOfWork : IUnitOfWork
     {
@@ -11,6 +12,8 @@
 
         public ICityRepository CityRepository => 
             new CityRepository(dataContext);
+
+        public IUserRepository UserRepository => new UserRepository(dataContext);
 
         public UnitOfWork(DataContext dataContext)
         {
