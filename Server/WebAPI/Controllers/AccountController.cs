@@ -1,19 +1,28 @@
 ﻿namespace WebAPI.Controllers
 {
+    using System;
+    using System.IdentityModel.Tokens.Jwt;
+    using System.Security.Claims;
+    using System.Text;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
-    
-    using WebAPI.Dtos;
-    using WebAPI.Interfaces;
-    
+    using Microsoft.IdentityModel.Tokens;
+    using Microsoft.Extensions.Configuration;
+
+    using Dtos;
+    using Interfaces;
+    using Models;
+
     public class AccountController : BaseController
     {
         private readonly IUnitOfWork unitOfWork;
+        private readonly IConfiguration configuration;
 
-        public AccountController(IUnitOfWork unitOfWork)
+        public AccountController(IUnitOfWork unitOfWork, IConfiguration configuration)
         {
             this.unitOfWork = unitOfWork;
+            this.configuration = configuration;
         }
 
         [HttpPost("login")]
@@ -29,10 +38,37 @@
             var loginResponse = new LoginResponseDto();
 
             loginResponse.Username = user.Username;
-            loginResponse.Token = "Token to be generated";
+            loginResponse.Token = CreateJWT(user);
 
 
             return this.Ok(loginResponse);
+        }
+
+        public string CreateJWT(User user)
+        {
+            var secretKey = configuration.GetSection("AppSettings:Key").Value;
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+
+            var claims = new Claim[] {
+                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+            };
+
+            var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddMinutes(1),
+                SigningCredentials = signingCredentials
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+
+            return tokenHandler.WriteToken(token);
         }
     }
 }

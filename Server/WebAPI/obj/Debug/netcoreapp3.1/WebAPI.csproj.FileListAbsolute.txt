@@ -1,6 +1,5 @@
 E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\appsettings.json
-E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.exe
 E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.deps.json
 E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.runtimeconfig.json
@@ -200,3 +199,5 @@ E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.
 E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\#CodingStuff\Estater\Server\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
 E:\#CodingStuff\Estater\Server\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+E:\#CodingStuff\Estater\Server\WebAPI\obj\Debug\netcoreapp3.1\scopedcss\bundle\WebAPI.styles.css
+E:\#CodingStuff\Estater\Server\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

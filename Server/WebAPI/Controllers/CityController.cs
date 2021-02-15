@@ -6,11 +6,13 @@
 
     using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Authorization;
 
     using Interfaces;
     using Dtos;
     using Models;
 
+    [Authorize]
     public class CityController : BaseController
     {
         private readonly IUnitOfWork unitOfWork;
@@ -23,6 +25,7 @@
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllCities()
         {
             var cities = await this.unitOfWork.CityRepository.GetCitiesAsync();

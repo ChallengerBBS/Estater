@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "7bTJ6QQPhZsmrWbiMCGVSYCRezKO8o2Ioo5NbWXPgEBmlDF73MvkTUvycvk5ZyR70ov6izn/B+H/sK+T5vrhpw==",
+  "dgSpecHash": "G6lofzRLdH9y4TeEHD1m3yQh8QrFtXHShFVCsJJM434J8aeT12WllTzFFCMPcQB75GvL6eoPXTKz5Jxto60fKQ==",
   "success": true,
   "projectFilePath": "E:\\#CodingStuff\\Estater\\Server\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chall\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\chall\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "C:\\Users\\chall\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.12\\microsoft.aspnetcore.authentication.jwtbearer.3.1.12.nupkg.sha512",
     "C:\\Users\\chall\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\chall\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.10\\microsoft.aspnetcore.jsonpatch.3.1.10.nupkg.sha512",
     "C:\\Users\\chall\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.10\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.10.nupkg.sha512",
