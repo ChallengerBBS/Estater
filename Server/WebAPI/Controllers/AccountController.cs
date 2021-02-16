@@ -44,6 +44,20 @@
             return this.Ok(loginResponse);
         }
 
+        [HttpPost("register")]
+        public async Task<IActionResult> Register(LoginRequestDto loginRequest)
+        {
+            if (await unitOfWork.UserRepository.UserAlreadyExists(loginRequest.Username))
+            {
+                return this.BadRequest("User already exists !");
+            }
+
+            this.unitOfWork.UserRepository.Register(loginRequest.Username, loginRequest.Password);
+            await this.unitOfWork.SaveAsync();
+
+            return this.StatusCode(201);
+        }
+
         public string CreateJWT(User user)
         {
             var secretKey = configuration.GetSection("AppSettings:Key").Value;
