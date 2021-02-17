@@ -3,8 +3,7 @@
     using System.Threading.Tasks;
 
     using Interfaces;
-    using WebAPI.Data.Repositories;
-    using WebAPI.Models;
+    using Repositories;
 
     public class UnitOfWork : IUnitOfWork
     {

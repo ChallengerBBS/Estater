@@ -1,8 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace WebAPI.Models
+﻿namespace WebAPI.Models
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
     public class City
     {
         public int Id { get; set; }

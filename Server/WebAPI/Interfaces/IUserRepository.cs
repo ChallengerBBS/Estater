@@ -2,7 +2,7 @@
 {   
     using System.Threading.Tasks;
 
-    using WebAPI.Models;
+    using Models;
 
     public interface IUserRepository
     {

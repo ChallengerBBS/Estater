@@ -1,7 +1,7 @@
-﻿using System.Text.Json;
-
-namespace WebAPI.Errors
+﻿namespace WebAPI.Errors
 {
+    using System.Text.Json;
+
     public class APIError
     {
         public APIError(int errorCode, string errorMessage, string errorDetails = null)

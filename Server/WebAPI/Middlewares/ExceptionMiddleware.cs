@@ -7,7 +7,8 @@
     using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Logging;
-    using WebAPI.Errors;
+
+    using Errors;
 
     public class ExceptionMiddleware
     {

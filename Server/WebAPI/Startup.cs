@@ -1,20 +1,20 @@
 namespace WebAPI
 {
-    using Data;
-    using Helpers;
-    using Interfaces;
-    using WebAPI.Extensions;
+    using System.Text;
 
+    using AutoMapper;
     using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-
-    using AutoMapper;
-    using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.IdentityModel.Tokens;
-    using System.Text;
+
+    using Data;
+    using Helpers;
+    using Interfaces;
+    using Extensions;
 
     public class Startup
     {

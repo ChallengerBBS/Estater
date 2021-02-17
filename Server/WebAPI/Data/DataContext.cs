@@ -1,7 +1,8 @@
 ﻿namespace WebAPI.Data
 {
     using Microsoft.EntityFrameworkCore;
-    using WebAPI.Models;
+
+    using Models;
 
     public class DataContext : DbContext
     {

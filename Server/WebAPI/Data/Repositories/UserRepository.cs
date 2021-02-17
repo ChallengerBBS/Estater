@@ -7,7 +7,6 @@
 
     using Interfaces;
     using Models;
-    using System;
 
     public class UserRepository : IUserRepository
     {
