@@ -22,12 +22,14 @@
       "@angular/router": "~11.2.4",
       "@kolkov/ngx-gallery": "^1.2.3",
       "alertifyjs": "^1.13.1",
-      "bootstrap": "^4.5.3",
+      "bootstrap": "^4.6.0",
+      "firebase": "^8.2.10",
+      "jquery": "^3.6.0",
       "ngx-bootstrap": "^6.2.0",
+      "popper.js": "^1.16.1",
       "rxjs": "~6.6.0",
-      "tslib": "^2.0.0",
-      "zone.js": "~0.11.3",
-      "firebase": "^8.1.1"
+      "tslib": "^2.1.0",
+      "zone.js": "~0.11.3"
    },
    "devDependencies": {
       "@angular-devkit/build-angular": "~0.1102.3",
